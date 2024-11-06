@@ -1,0 +1,79 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a4d768e2-0ed8-4389-aa3d-b960b0247a83",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# sort 0s, 1s and 2s practice solution \n",
+    "\n",
+    "# function to sort an array of 0s, 1s, and 2s\n",
+    "def sort012(self, arr):\n",
+    "    low, mid, high = 0,0, len(arr) -1\n",
+    "\n",
+    "# using the Dutch National Flag Algorithm\n",
+    "while mid <= high:\n",
+    "    if arr[mid] == 0:\n",
+    "        arr[low], arr[mid] = arr[mid], arr[low], #swap the elements\n",
+    "        low += 1\n",
+    "        mid += 1\n",
+    "    elif arr [mid] == 1:\n",
+    "        mid += 1\n",
+    "    else:\n",
+    "        arr[mid], arr[high] = arr[high], arr[mid] # swap the elements\n",
+    "        high -=1\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "680c0654-3db0-49d3-93d2-df2213b4e80e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Binary search practice solution \n",
+    "\n",
+    "class solution:\n",
+    "    # function to perform binary search recursivley \n",
+    "    def bin_search(self, arr, left, right, k):\n",
+    "        if left > right:\n",
+    "            return -1 # if left pointer exceeds right pointer, element not found \n",
+    "        mid = (left + right) // 2 # calculate mid index\n",
+    "        if arr[mid] == k:\n",
+    "            return mid # if element is found at mid index, return index \n",
+    "        if arr[mid] > k:\n",
+    "            return self.bin_search(\n",
+    "                arr, mid + 1, right, k\n",
+    "            ) # if element is greater than mid, perform binary search on right subbarray \n",
+    " # Fuction to call the binary search function \n",
+    "    def binary_search(self, arr, K):\n",
+    "        n = len(arr)\n",
+    "        return self.bin_search(arr, 0, n - 1,\n",
+    "                               k) # perform binary search on the entire array "
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
